@@ -76,6 +76,7 @@ done
 source $VAR_FILE
 PROXY_ENV=$(grep -Po 'PRX_\K.*' $VAR_FILE)
 INDEXER_ENV=$(grep -Po 'IDX_\K.*' $VAR_FILE)
+TRACER_ENV=$(grep -Po 'TCR_\K.*' $VAR_FILE)
 
 
 # Set values from a command line
@@ -353,6 +354,8 @@ echo "Setup proxy env variables"
 kubectl -n ${VAULT_NAMESPACE} exec vault-0 -- /bin/sh -c "echo '$PROXY_ENV' | xargs vault kv put neon-proxy/proxy_env" 1>/dev/null
 echo "Setup indexer env variables"
 kubectl -n ${VAULT_NAMESPACE} exec vault-0 -- /bin/sh -c "echo '$INDEXER_ENV' | xargs vault kv put neon-proxy/indexer_env" 1>/dev/null
+echo "Setup tracer env variables"
+kubectl -n ${VAULT_NAMESPACE} exec vault-0 -- /bin/sh -c "echo '$TRACER_ENV' | xargs vault kv put neon-proxy/tracer_env" 1>/dev/null
 
 ## 3. Proxy
 [[ $NEON_PROXY_ENABLED != "true" ]] || {

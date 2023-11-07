@@ -21,7 +21,7 @@ Steps:
 3. Create and add a worker/node.
 4. Acessing the cluster.
 
-You can add additional controlles/nodes/workers, but let's start first with a simple setup.
+You can add additional controllers/nodes/workers, but let's start first with a simple setup.
 
 ## Single kubernetes node 
 
@@ -57,7 +57,7 @@ sudo k0s status
 sudo k0s kubectl get nodes
 ```
 
-#### List the defaults namespaces for K0s isntallation:
+#### List the defaults namespaces for K0s installation:
 
 ```bash
 sudo k0s kubectl get namespaces

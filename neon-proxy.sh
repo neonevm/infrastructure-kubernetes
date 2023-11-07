@@ -26,7 +26,7 @@ HELP="\nUsage: $0 [OPTION]...\n
   -r, Read-only mode\n  
   -S, SOLANA_URL\n
   -p, Set postgres admin password (can be used only with -i option) \n
-  -v, Set vault root token (experemental) \n  
+  -v, Set vault root token (experimental) \n  
   -m, Use this option to set migrations\n
   -k, Set keys directory \n
   -y, Assume \"yes\" as answer, run non-interactively \n
